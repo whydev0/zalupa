@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Интерактивный Сайт</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="pointer">⬇</div>
+
+  <div class="image-container" onclick="playVideo()">
+    <img src="https://via.placeholder.com/300x200/000000/000000?text=" alt="Черная фотка">
+  </div>
+
+  <div class="video-player" id="video">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+      allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+
+  <script>
+    function playVideo() {
+      document.getElementById('video').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
