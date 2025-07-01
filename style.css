@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+.pointer {
+  color: white;
+  font-size: 48px;
+  margin-bottom: 20px;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to   { transform: translateY(10px); }
+}
+
+.image-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.image-container img {
+  width: 300px;
+  height: auto;
+  transition: all 0.3s ease;
+  filter: brightness(0.9);
+}
+
+.image-container:hover img {
+  outline: 3px solid white;
+  outline-offset: 6px;
+  filter: brightness(1.1);
+}
+
+.video-player {
+  display: none;
+  margin-top: 20px;
+}
+
+iframe {
+  border: none;
+}
