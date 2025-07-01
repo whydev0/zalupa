@@ -3,26 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Интерактивный Сайт</title>
+  <title>Play Surprise</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <div class="pointer">⬇</div>
-
   <div class="image-container" onclick="playVideo()">
-    <img src="https://via.placeholder.com/300x200/000000/000000?text=" alt="Черная фотка">
+    <img src="default.jpg" alt="Default" class="main-image" />
+    <div class="play-button">▶ PLAY</div>
   </div>
 
   <div class="video-player" id="video">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-      allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <iframe width="560" height="315" 
+      src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+      allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
   </div>
 
   <script>
     function playVideo() {
-      document.getElementById('video').style.display = 'block';
+      document.querySelector(".image-container").style.display = "none";
+      document.getElementById("video").style.display = "block";
     }
+
+    // При наведении — замена картинки
+    const img = document.querySelector(".main-image");
+    img.addEventListener("mouseenter", () => {
+      img.src = "hover.jpg";
+    });
+    img.addEventListener("mouseleave", () => {
+      img.src = "default.jpg";
+    });
   </script>
 
 </body>
