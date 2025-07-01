@@ -11,27 +11,13 @@ body {
 }
 
 .image-container {
-  position: relative;
   cursor: pointer;
 }
 
-.main-image {
+.image-container img {
   width: 320px;
   height: auto;
   transition: 0.3s ease;
-}
-
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 24px;
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 10px 20px;
-  border-radius: 10px;
-  pointer-events: none;
 }
 
 .video-player {
