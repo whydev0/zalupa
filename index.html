@@ -3,36 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Play Surprise</title>
+  <title>Hover to Play</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <div class="image-container" onclick="playVideo()">
-    <img src="default.jpg" alt="Default" class="main-image" />
-    <div class="play-button">▶ PLAY</div>
+  <div class="image-container" id="preview">
+    <img src="default.jpg" alt="Preview" id="preview-img" />
   </div>
 
   <div class="video-player" id="video">
-    <iframe width="560" height="315" 
+    <iframe width="560" height="315"
       src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
       allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
   </div>
 
   <script>
-    function playVideo() {
-      document.querySelector(".image-container").style.display = "none";
-      document.getElementById("video").style.display = "block";
-    }
+    const img = document.getElementById("preview-img");
+    const preview = document.getElementById("preview");
+    const video = document.getElementById("video");
 
-    // При наведении — замена картинки
-    const img = document.querySelector(".main-image");
     img.addEventListener("mouseenter", () => {
       img.src = "hover.jpg";
     });
+
     img.addEventListener("mouseleave", () => {
       img.src = "default.jpg";
+    });
+
+    preview.addEventListener("click", () => {
+      preview.style.display = "none";
+      video.style.display = "block";
     });
   </script>
 
