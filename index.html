@@ -3,38 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hover to Play</title>
+  <title>Fullscreen Video on Click</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <div class="image-container" id="preview">
-    <img src="https://learn.logikaschool.com/uploads/student/4632435/686431b2cdf67.jpg" alt="Preview" id="preview-img" />
+  <div class="fullscreen-image" id="image-block">
+    <img src="default.jpg" alt="Fullscreen Preview" id="main-img">
   </div>
 
-  <div class="video-player" id="video">
-    <iframe width="560" height="315"
-      src="https://rt.pornhub.com/view_video.php?viewkey=685d2be997d12"
-      allow="autoplay; encrypted-media" allowfullscreen>
+  <div class="fullscreen-video" id="video-block">
+    <iframe id="video-iframe"
+      src=""
+      allow="autoplay; fullscreen; encrypted-media"
+      allowfullscreen>
     </iframe>
   </div>
 
   <script>
-    const img = document.getElementById("preview-img");
-    const preview = document.getElementById("preview");
-    const video = document.getElementById("video");
+    const img = document.getElementById('main-img');
+    const imageBlock = document.getElementById('image-block');
+    const videoBlock = document.getElementById('video-block');
+    const iframe = document.getElementById('video-iframe');
 
-    img.addEventListener("mouseenter", () => {
-      img.src = "https://learn.logikaschool.com/uploads/student/4632435/6864315df02c7.jpg";
+    // При наведении — заменить картинку
+    img.addEventListener('mouseenter', () => {
+      img.src = 'hover.jpg';
     });
 
-    img.addEventListener("mouseleave", () => {
-      img.src = "https://learn.logikaschool.com/uploads/student/4632435/686431b2cdf67.jpg";
+    img.addEventListener('mouseleave', () => {
+      img.src = 'default.jpg';
     });
 
-    preview.addEventListener("click", () => {
-      preview.style.display = "none";
-      video.style.display = "block";
+    // При нажатии — показать видео во весь экран
+    imageBlock.addEventListener('click', () => {
+      imageBlock.style.display = 'none';
+      iframe.src = 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=0';
+      videoBlock.style.display = 'block';
     });
   </script>
 
